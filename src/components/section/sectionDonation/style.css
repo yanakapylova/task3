@@ -1,0 +1,50 @@
+.section5 {
+  padding: 80px 40px;
+
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+  background-color: #f6f6f6;
+}
+
+.section5 p {
+    margin: 0;
+}
+
+.section5 .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 380px;
+}
+
+.section5 .content .credit-card {
+    padding: 10px 15px;
+    background-color: #F1CDB3;
+    color: #545454;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.06rem;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section5 .content-subtitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 1.1;
+    letter-spacing: 0.06rem;
+}
+
+.section5 .legal-information {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    /* line-height: 1.8; */
+    /* letter-spacing: 0.06rem; */
+    font-style: italic;
+    color: #B2B2B2;
+}

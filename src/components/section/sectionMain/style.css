@@ -1,0 +1,42 @@
+.section1 {
+  padding: 60px 40px;
+  padding-bottom: 0px;
+  background-image: url("/public/img/main/main-bg.png");
+}
+
+.section1 main {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.section1 main .content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-top: -90px;
+}
+
+.section1 main .content .content-title {
+  font-size: 44px;
+  line-height: 130%;
+  color: white;
+}
+
+.section1 main .content .content-subtitle {
+  font-size: 15px;
+  line-height: 160%;
+  color: #cdcdcd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* 
+.section1 main .content .button {
+  border-radius: 100px;
+  background-color: #f1cdb3;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
