@@ -1,10 +1,11 @@
 header {
-  width: 100%;
+  width: calc(100% - 80px);
   height: 60px;
   display: flex;
+  padding: 30px 40px;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 60px;
+  background-image: url("/public/img/main/main-bg.png"); /* ??????? */
 }
 
 header nav {

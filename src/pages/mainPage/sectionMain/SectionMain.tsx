@@ -1,10 +1,8 @@
-import { Header } from "../../header/Header";
 import Button from "@mui/material/Button";
 
 export const SectionMain = function () {
   return (
     <section className="section1">
-      <Header />
       <main>
         <div className="content">
           <div className="content-title">
