@@ -48,5 +48,11 @@ header .logo .logo-subtitle {
     height: 60px;
     padding: 10px 20px;
     background-color: #292929;
+    position: relative;
+  }
+
+  header .logo {
+    position: absolute;
+    right: 120px;
   }
 }
