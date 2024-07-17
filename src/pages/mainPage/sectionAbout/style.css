@@ -6,8 +6,8 @@
   justify-content: center;
 }
 
-.section2 h3{
-    margin-top: 25px;
+.section2 h3 {
+  margin-top: 25px;
 }
 
 .section2 .about-content .content-title {
@@ -20,4 +20,42 @@
   font-family: Arial, Helvetica, sans-serif;
 
   width: 430px;
+}
+
+@media screen and (max-width: 1280px) {
+  .section2 {
+    flex-direction: column-reverse;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .section2 .about-img {
+    width: 45%;
+  }
+
+  .section2 .about-img img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .section2 {
+    gap: 40px;
+  }
+
+  .section2 .about-content .content-title {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .section2 .about-content .content-subtitle {
+    width: auto;
+    text-align: justify;
+  }
+
+  .section2 .about-img {
+    width: 260px;
+  }
+
 }

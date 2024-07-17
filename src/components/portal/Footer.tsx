@@ -12,7 +12,7 @@ export const Footer = function () {
           <div className="text">+13 674 567 75 54</div>
         </div>
       </div>
-      <div className="contacts">
+      <div className="contacts adress">
       <h3>We are waiting for your visit</h3>
         <div className="block">
           <img src="/img/footer/icon-marker.png" alt="email-icon" />
