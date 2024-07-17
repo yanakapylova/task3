@@ -8,7 +8,7 @@ export const SectionSlider = function () {
   const [startSliderIndex, setStartSliderIndex] = useState(1);
   const [activePopUp, setActivePopUp] = useState(cards[0]);
 
-  const [currSliderArr, setCurrSliderArr]: any[] = useState([cards[0]]);
+  const [currSliderArr, setCurrSliderArr]: any[] = useState([]);
 
   useEffect(() => {
     if (window.innerWidth >= 1280) {
