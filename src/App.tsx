@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import "./pages/mainPage/sectionMain/style.css";
 import "./pages/mainPage/sectionAbout/style.css";
@@ -16,12 +16,13 @@ import { OurPets } from "./pages/ourPets/OurPets";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
         <Portal>
           <Routes>
-            <Route index element={<MainPage />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="ourpets" element={<OurPets />} />
           </Routes>
         </Portal>

@@ -5,7 +5,14 @@ header {
   padding: 30px 40px;
   justify-content: space-between;
   align-items: center;
+}
+
+header.dark {
   background-image: url("/public/img/main/main-bg.png"); /* ??????? */
+}
+
+header.light {
+  background: white;
 }
 
 header nav {
