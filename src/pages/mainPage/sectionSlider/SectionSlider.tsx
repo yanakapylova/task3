@@ -5,7 +5,7 @@ import { Pet } from "./pets-list";
 import { cards } from "./pets-list";
 
 export const SectionSlider = function () {
-  const [startSliderIndex, setStartSliderIndex] = useState(1);
+  const [startSliderIndex, setStartSliderIndex] = useState(0);
   const [activePopUp, setActivePopUp] = useState(cards[0]);
 
   const [currSliderArr, setCurrSliderArr]: any[] = useState([]);
@@ -18,7 +18,14 @@ export const SectionSlider = function () {
     } else {
       setCurrSliderArr([cards[0]]);
     }
+    let arrow_left: any = document.querySelector(".slider-left-arrow");
+    arrow_left.disabled = true;
   }, []);
+
+  useEffect(() => {
+    setCurrSliderArr(() => sliderConstructor());
+    buttonsControl();
+  }, [startSliderIndex]);
 
   function sliderConstructor() {
     let currSliderIndex: number = startSliderIndex;
@@ -42,8 +49,27 @@ export const SectionSlider = function () {
         currSliderIndex = 0;
       }
     }
-
     return currSliderArrCONSTRUCTOR;
+  }
+
+  function handleSliderClick(step: number) {
+    setStartSliderIndex((prev) => {
+      return prev + step;
+    });
+  }
+
+  function buttonsControl() {
+    let arrow_right: any = document.querySelector(".slider-right-arrow");
+    let arrow_left: any = document.querySelector(".slider-left-arrow");
+
+    if (startSliderIndex == cards.length - 1) {
+      arrow_right.disabled = true;
+    } else if (startSliderIndex == 0) {
+      arrow_left.disabled = true;
+    } else {
+      arrow_right.disabled = false;
+      arrow_left.disabled = false;
+    }
   }
 
   function buttonMore(activeItem: Pet) {
@@ -66,16 +92,6 @@ export const SectionSlider = function () {
     });
   }
 
-  function handleSliderClick() {
-    if (startSliderIndex == cards.length - 1) {
-      setStartSliderIndex(0);
-    } else {
-      setStartSliderIndex((prev) => prev + 1);
-    }
-
-    setCurrSliderArr(sliderConstructor());
-  }
-
   return (
     <section className="section3">
       <h3>
@@ -84,7 +100,12 @@ export const SectionSlider = function () {
         are looking for a house
       </h3>
       <div className="slider-wrapper">
-        <button className="slider-left-arrow">←</button>
+        <button
+          className="slider-left-arrow slider-arrow"
+          onClick={() => handleSliderClick(-1)}
+        >
+          ←
+        </button>
         <div className="slider">
           {currSliderArr.map((item: Pet) => {
             return (
@@ -103,7 +124,10 @@ export const SectionSlider = function () {
             );
           })}
         </div>
-        <button className="slider-right-arrow" onClick={handleSliderClick}>
+        <button
+          className="slider-right-arrow slider-arrow"
+          onClick={() => handleSliderClick(1)}
+        >
           →
         </button>
       </div>
