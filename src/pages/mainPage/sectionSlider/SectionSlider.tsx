@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { PopUp } from "../../../components/popup/PopUp";
 import { Pet } from "./pets-list";
 import { cards } from "./pets-list";
+import { Link } from "react-router-dom";
 
 export const SectionSlider = function () {
   const [startSliderIndex, setStartSliderIndex] = useState(0);
@@ -108,7 +109,7 @@ export const SectionSlider = function () {
         </button>
       </div>
       <PopUp item={activePopUp} />
-      <Button variant="contained">Get to know the rest</Button>
+      <Link to="/ourpets"><Button variant="contained">Get to know the rest</Button></ Link>
     </section>
   );
 };
