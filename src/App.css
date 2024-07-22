@@ -22,3 +22,7 @@ h3 {
   box-shadow: none !important;
   align-self: self-start;
 }
+
+.App button.MuiButtonBase-root:hover {
+  background-color: #fddcc4 !important;
+}

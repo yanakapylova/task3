@@ -1,6 +1,6 @@
 export const Footer = function () {
   return (
-    <footer>
+    <footer id="contacts">
       <div className="contacts">
         <h3>For questions and suggestions</h3>
         <div className="block">

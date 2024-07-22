@@ -80,6 +80,7 @@
 
   .section1 {
     padding: 40px 20px;
+    padding-bottom: 0px;
     width: calc(100% - 40px);
     text-align: center;
   }

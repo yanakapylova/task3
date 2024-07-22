@@ -5,7 +5,14 @@ header {
   padding: 30px 40px;
   justify-content: space-between;
   align-items: center;
+}
+
+header.dark {
   background-image: url("/public/img/main/main-bg.png"); /* ??????? */
+}
+
+header.light {
+  background: white;
 }
 
 header nav {
@@ -13,32 +20,80 @@ header nav {
   gap: 35px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+}
+
+header.dark nav div a {
+  text-decoration: none;
   color: #cdcdcd;
 }
 
+header.light nav div a {
+  text-decoration: none;
+  color: #545454;
+}
+
 header nav .active {
-  color: #fafafa;
   padding-bottom: 5px;
   border-bottom: 3px #f1cdb3 solid;
 }
 
+header.dark nav .active {
+  color: #fafafa;
+}
+
+header.light nav .active {
+  color: #292929;
+}
+
+/* header nav div:nth-child(2) {
+  border: red 2px solid;
+} */
+
 header .logo {
   text-align: center;
+  z-index: 1001;
 }
 
 header .logo .logo-title {
   font-size: 32px;
+}
+
+header.dark .logo .logo-title {
   color: #f1cdb3;
+}
+
+header.light .logo .logo-title {
+  color: #545454;
 }
 
 header .logo .logo-subtitle {
   font-size: 13px;
   letter-spacing: 1.1px;
+}
+
+header.dark .logo .logo-subtitle {
   color: #ffffff;
 }
 
-@media screen and (max-width: 1280px) {
-  header {
+header.light .logo .logo-subtitle {
+  color: #292929;
+}
+
+@media screen and (max-width: 768px) {
+  header > nav {
     display: none;
+  }
+
+  header {
+    width: calc(100% - 40px);
+    height: 60px;
+    padding: 10px 20px;
+    background-color: #292929;
+    position: relative;
+  }
+
+  header .logo {
+    position: absolute;
+    right: 120px;
   }
 }
