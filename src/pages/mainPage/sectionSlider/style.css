@@ -1,9 +1,109 @@
 .section3 {
-    padding: 80px 0;
-    background-color: #F6F6F6;
-    text-align: center;
+  padding: 80px 20px;
+  background-color: #f6f6f6;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.section3 h3{
-    margin-top: 50px;
+.section3 h3 {
+  margin-top: 50px;
+}
+
+.section3 .slider-wrapper {
+  display: flex;
+  gap: 50px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.section3 .slider {
+  display: flex;
+  gap: 90px;
+  margin: 0 auto;
+}
+
+.section3 .slider-wrapper .slider-arrow {
+  width: 52px;
+  height: 52px;
+  border: #f1cdb3 2px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.section3 .slider-wrapper .slider-arrow:hover {
+  border: #f1cdb3 2px solid;
+  background-color: #f1cdb3 !important;
+}
+
+.section3 .slider-wrapper .slider-arrow:disabled {
+  background-color: transparent !important;
+  border: #CDCDCD 2px solid;
+  color: #CDCDCD;
+  cursor: default;
+}
+
+.section3 .slider .slider-item {
+  background-color: #fafafa;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.06em;
+  width: 270px;
+}
+
+.section3 .slider .slider-item img {
+  width: 100%;
+}
+
+.section3 .slider .slider-item > * {
+  margin-bottom: 30px;
+}
+
+.section3 .slider .slider-item {
+  width: 100%;
+}
+
+.section3 > button {
+  margin: 0 auto;
+}
+
+.section3 .slider .slider-item .slider-item-button {
+  background-color: transparent !important;
+  border: #f1cdb3 2px solid;
+  cursor: pointer;
+}
+
+.section3 .slider .slider-item .slider-item-button:hover {
+  background-color: #f1cdb3 !important;
+}
+
+
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 768px) {
+    
+  .section3 .slider-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .section3 .slider-wrapper .slider-left-arrow {
+    order: 2;
+    margin-right: 60px;
+  }
+  .section3 .slider-wrapper .slider-right-arrow {
+    order: 3;
+  }
+  .slider {
+    order: 1;
+    width: 100%;
+  }
 }
