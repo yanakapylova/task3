@@ -15,6 +15,11 @@ export const OurPets = function () {
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
+    document.querySelector("header")?.classList.add("light");
+    document.querySelector("header")?.classList.remove("dark");
+  });
+
+  useEffect(() => {
     if (window.innerWidth >= 1280) {
       setItemsInRow(() => 4);
       setRowsNumber(() => 2);
@@ -33,7 +38,6 @@ export const OurPets = function () {
     let currSliderIndex: number = startSliderIndex;
     let currSliderArrCONSTRUCTOR: Pet[] = [];
 
-    console.log("startIndex = ", startSliderIndex);
 
     let flag = true;
     for (let j = 0; j < rowsNumber; j++) {
@@ -58,26 +62,19 @@ export const OurPets = function () {
       startSliderIndex + itemsInRow * rowsNumber > cards.length - 1
         ? true
         : false;
-    console.log(startSliderIndex + itemsInRow * rowsNumber);
-    console.log(startSliderIndex + itemsInRow * rowsNumber > cards.length - 1);
 
     let button_left: any = document.querySelector(".slider-left-arrow");
     button_left.disabled = startSliderIndex == 0 ? true : false;
-    console.log(startSliderIndex);
 
     let button_d_right: any = document.querySelector(".slider-right-double-arrow");
     button_d_right.disabled =
       startSliderIndex + itemsInRow * rowsNumber * 2 > cards.length - 1
         ? true
         : false;
-    console.log(startSliderIndex + itemsInRow * rowsNumber);
-    console.log(startSliderIndex + itemsInRow * rowsNumber > cards.length - 1);
 
     let button_d_left: any = document.querySelector(".slider-left-double-arrow");
     button_d_left.disabled = startSliderIndex - itemsInRow * rowsNumber * 2 < 0 ? true : false;
-    console.log(startSliderIndex);
 
-    console.log(currSliderArrCONSTRUCTOR);
     return currSliderArrCONSTRUCTOR;
   }
 

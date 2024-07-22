@@ -9,7 +9,9 @@ export const Header = function () {
         <div className="logo-subtitle">Shelter for pets in Boston</div>
       </div>
       <nav>
-        <div className="active">About the shelter</div>
+        <div className="active">
+          <Link to="/">About the shelter</Link>
+        </div>
         <div>
           <Link to="/ourpets">Our pets</Link>
         </div>

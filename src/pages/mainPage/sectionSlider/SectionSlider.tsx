@@ -87,9 +87,9 @@ export const SectionSlider = function () {
       <div className="slider-wrapper">
         <button className="slider-left-arrow">←</button>
         <div className="slider">
-          {currSliderArr.map((item: Pet) => {
+          {currSliderArr.map((item: Pet, key: any) => {
             return (
-              <div className="slider-item">
+              <div className="slider-item" key={key}>
                 <div className="slider-item-image">
                   <img src={item.image} alt="" />
                 </div>
