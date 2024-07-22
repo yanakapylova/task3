@@ -1,0 +1,32 @@
+footer {
+  padding: 60px 40px;
+  padding-bottom: 0px;
+
+  display: flex;
+  gap: 160px;
+  justify-content: space-between;
+  background-image: url("/public/img/main/main-bg.png");
+}
+
+footer h3 {
+    color: white;
+}
+
+footer .text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.06rem;
+    color: #F1CDB3;
+}
+
+footer .block {
+    display: flex;
+    gap: 20px;
+}
+
+footer .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}

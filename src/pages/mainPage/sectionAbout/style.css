@@ -1,0 +1,23 @@
+.section2 {
+  padding: 60px 40px;
+
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+}
+
+.section2 h3{
+    margin-top: 25px;
+}
+
+.section2 .about-content .content-title {
+}
+
+.section2 .about-content .content-subtitle {
+  font-size: 15px;
+  line-height: 160%;
+  color: #4c4c4c;
+  font-family: Arial, Helvetica, sans-serif;
+
+  width: 430px;
+}

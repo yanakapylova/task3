@@ -1,0 +1,38 @@
+header {
+  width: calc(100% - 80px);
+  height: 60px;
+  display: flex;
+  padding: 30px 40px;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("/public/img/main/main-bg.png"); /* ??????? */
+}
+
+header nav {
+  display: flex;
+  gap: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #cdcdcd;
+}
+
+header nav .active {
+  color: #fafafa;
+  padding-bottom: 5px;
+  border-bottom: 3px #f1cdb3 solid;
+}
+
+header .logo {
+  text-align: center;
+}
+
+header .logo .logo-title {
+  font-size: 32px;
+  color: #f1cdb3;
+}
+
+header .logo .logo-subtitle {
+  font-size: 13px;
+  letter-spacing: 1.1px;
+  color: #ffffff;
+}
