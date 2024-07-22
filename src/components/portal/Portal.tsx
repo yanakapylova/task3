@@ -6,7 +6,7 @@ type PortalProps = {
   children: React.ReactNode;
 };
 
-export const Portal: React.FC<PortalProps> = ({ children }) => {
+export const Portal = ({ children }: PortalProps) => {
   return (
     <>
       <Header />

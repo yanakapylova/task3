@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 export const SectionMain = function () {
   return (
     <section className="section1">
-      <main>
         <div className="content">
           <div className="content-title">
             Not only people
@@ -20,7 +19,6 @@ export const SectionMain = function () {
         <div className="main-image">
           <img src="/img/main/main-screen-puppy.png" alt="" />
         </div>
-      </main>
     </section>
   );
 };

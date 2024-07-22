@@ -8,43 +8,90 @@
 }
 
 .section5 p {
-    margin: 0;
+  margin: 0;
 }
 
 .section5 .content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 380px;
 }
 
 .section5 .content .credit-card {
-    padding: 10px 15px;
-    background-color: #F1CDB3;
-    color: #545454;
-    border-radius: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
-    line-height: 1.15;
-    letter-spacing: 0.06rem;
-    align-self: flex-start;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  padding: 10px 15px;
+  background-color: #f1cdb3;
+  color: #545454;
+  border-radius: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.06rem;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .section5 .content-subtitle {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 15px;
-    line-height: 1.1;
-    letter-spacing: 0.06rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0.06rem;
 }
 
 .section5 .legal-information {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  color: #b2b2b2;
+}
+
+@media screen and (max-width: 1280px) {
+  .section5 {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .section5 > img {
+    width: 70%;
+  }
+
+  .section5 .content .credit-card {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section5 {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .section5 .content .credit-card {
+    margin: 0 auto;
+  }
+
+  .section5 .content .credit-card span {
+    font-size: 15px;
+  }
+
+  .section5 .content .content-subtitle {
+    font-size: 15px;
+    letter-spacing: normal;
+  }
+
+  .section5 .content {
+    width: auto;
+  }
+
+  .section5 .content h3 {
+    font-size: 25px;
+  }
+
+  .section5 .legal-information {
     font-size: 12px;
-    /* line-height: 1.8; */
-    /* letter-spacing: 0.06rem; */
-    font-style: italic;
-    color: #B2B2B2;
+    line-height: 1.18;
+    text-align: justify;
+  }
 }
