@@ -11,6 +11,17 @@ export const Header = function () {
         <div>Help the shelter</div>
         <div>Contacts</div>
       </nav>
+
+      <div className="burger-menu">
+        <input type="checkbox" id="burger-checkbox" className="burger-checkbox" />
+        <label htmlFor="burger-checkbox" className="burger"></label>
+        <div className="burger-menu-list">
+          <div className="burger-menu-item active"><a href="#">About the shelter</a></div>
+          <div className="burger-menu-item"><a href="#">Our pets</a></div>
+          <div className="burger-menu-item"><a href="#">Help the shelter</a></div>
+          <div className="burger-menu-item"><a href="#">Contacts</a></div>
+        </div>
+      </div>
     </header>
   );
 };
