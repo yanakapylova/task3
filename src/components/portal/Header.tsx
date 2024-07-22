@@ -15,8 +15,12 @@ export const Header = function () {
         <div>
           <Link to="/ourpets">Our pets</Link>
         </div>
-        <div>Help the shelter</div>
-        <div>Contacts</div>
+        <div>
+          <a href="/#help">Help the shelter</a>
+        </div>
+        <div>
+          <a href="/#contacts">Contacts</a>
+        </div>
       </nav>
 
       <div className="burger-menu">
@@ -28,16 +32,16 @@ export const Header = function () {
         <label htmlFor="burger-checkbox" className="burger"></label>
         <div className="burger-menu-list">
           <div className="burger-menu-item active">
-            <a href="#">About the shelter</a>
+            <Link to="/">About the shelter</Link>
           </div>
           <div className="burger-menu-item">
-            <a href="#">Our pets</a>
+            <Link to="/ourpets">Our pets</Link>
           </div>
           <div className="burger-menu-item">
-            <a href="#">Help the shelter</a>
+            <a href="/#help">Help the shelter</a>
           </div>
           <div className="burger-menu-item">
-            <a href="#">Contacts</a>
+            <a href="/#contacts">Contacts</a>
           </div>
         </div>
       </div>

@@ -101,21 +101,6 @@
   border-bottom: 3px #f1cdb3 solid;
 }
 
-.burger-menu-item a:after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 1px;
-  background: black;
-  top: 104%;
-  left: 0%;
-  transition: 0.2s;
-}
-
-.burger-menu-item a:hover:after {
-  width: 100%;
-}
-
 .burger-menu-item:hover {
   background: rgba(255, 255, 255, 0.2);
 }

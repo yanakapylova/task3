@@ -17,6 +17,18 @@ export const OurPets = function () {
   useEffect(() => {
     document.querySelector("header")?.classList.add("light");
     document.querySelector("header")?.classList.remove("dark");
+
+    document.querySelector("header div.active")?.classList.remove("active");
+    document
+      .querySelector("header nav div:nth-child(2)")
+      ?.classList.add("active");
+
+    document
+      .querySelector(".burger-menu-list div.active")
+      ?.classList.remove("active");
+    document
+      .querySelector(".burger-menu-list div:nth-child(2)")
+      ?.classList.add("active");
   });
 
   useEffect(() => {
@@ -37,7 +49,6 @@ export const OurPets = function () {
   function sliderConstructor() {
     let currSliderIndex: number = startSliderIndex;
     let currSliderArrCONSTRUCTOR: Pet[] = [];
-
 
     let flag = true;
     for (let j = 0; j < rowsNumber; j++) {
@@ -66,14 +77,19 @@ export const OurPets = function () {
     let button_left: any = document.querySelector(".slider-left-arrow");
     button_left.disabled = startSliderIndex == 0 ? true : false;
 
-    let button_d_right: any = document.querySelector(".slider-right-double-arrow");
+    let button_d_right: any = document.querySelector(
+      ".slider-right-double-arrow"
+    );
     button_d_right.disabled =
       startSliderIndex + itemsInRow * rowsNumber * 2 > cards.length - 1
         ? true
         : false;
 
-    let button_d_left: any = document.querySelector(".slider-left-double-arrow");
-    button_d_left.disabled = startSliderIndex - itemsInRow * rowsNumber * 2 < 0 ? true : false;
+    let button_d_left: any = document.querySelector(
+      ".slider-left-double-arrow"
+    );
+    button_d_left.disabled =
+      startSliderIndex - itemsInRow * rowsNumber * 2 < 0 ? true : false;
 
     return currSliderArrCONSTRUCTOR;
   }
@@ -105,7 +121,7 @@ export const OurPets = function () {
       setStartSliderIndex((prev) => prev + step * itemsInRow * rowsNumber);
     }
 
-    setPageNumber(prev => prev + step)
+    setPageNumber((prev) => prev + step);
 
     setCurrSliderArr(() => sliderConstructor());
   }

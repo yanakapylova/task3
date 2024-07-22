@@ -20,14 +20,34 @@ header nav {
   gap: 35px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+}
+
+header.dark nav div a {
+  text-decoration: none;
   color: #cdcdcd;
 }
 
+header.light nav div a {
+  text-decoration: none;
+  color: #545454;
+}
+
 header nav .active {
-  color: #fafafa;
   padding-bottom: 5px;
   border-bottom: 3px #f1cdb3 solid;
 }
+
+header.dark nav .active {
+  color: #fafafa;
+}
+
+header.light nav .active {
+  color: #292929;
+}
+
+/* header nav div:nth-child(2) {
+  border: red 2px solid;
+} */
 
 header .logo {
   text-align: center;
@@ -36,13 +56,27 @@ header .logo {
 
 header .logo .logo-title {
   font-size: 32px;
+}
+
+header.dark .logo .logo-title {
   color: #f1cdb3;
+}
+
+header.light .logo .logo-title {
+  color: #545454;
 }
 
 header .logo .logo-subtitle {
   font-size: 13px;
   letter-spacing: 1.1px;
+}
+
+header.dark .logo .logo-subtitle {
   color: #ffffff;
+}
+
+header.light .logo .logo-subtitle {
+  color: #292929;
 }
 
 @media screen and (max-width: 768px) {

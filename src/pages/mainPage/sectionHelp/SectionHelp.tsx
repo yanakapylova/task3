@@ -12,7 +12,7 @@ export const SectionHelp = function () {
   };
 
   return (
-    <section className="section4">
+    <section className="section4" id="help">
       <h3>
         How you can help
         <br />
