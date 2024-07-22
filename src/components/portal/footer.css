@@ -55,6 +55,7 @@ footer .contacts {
 
   footer {
     padding: 30px 20px;
+    padding-bottom: 0px;
   }
 
   footer .contacts {

@@ -1,5 +1,5 @@
-.section3 {
-  padding: 80px 20px;
+.our-pets {
+  padding: 80px 40px;
   background-color: #f6f6f6;
   text-align: center;
   display: flex;
@@ -7,25 +7,31 @@
   gap: 60px;
 }
 
-.section3 h3 {
+.our-pets h3 {
   margin-top: 50px;
 }
 
-.section3 .slider-wrapper {
+.our-pets .slider-wrapper {
   display: flex;
   gap: 50px;
   margin: 0 auto;
   align-items: center;
 }
 
-.section3 .slider {
+.our-pets .slider {
   display: flex;
-  gap: 90px;
+  gap: 40px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.section3 .slider-wrapper .slider-left-arrow,
-.section3 .slider-wrapper .slider-right-arrow {
+.our-pets .navigation {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.our-pets button.arrow {
   width: 52px;
   height: 52px;
   border: #f1cdb3 2px solid;
@@ -35,32 +41,46 @@
   justify-content: center;
   background-color: transparent;
 }
+.our-pets button.arrow:disabled {
+  border: #CDCDCD 2px solid;
 
-.section3 .slider .slider-item {
+}
+
+.our-pets .page-number {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1cdb3;
+}
+
+.our-pets .slider .slider-item {
   background-color: #fafafa;
   font-size: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: 0.06em;
-  width: 270px;
+  max-width: 270px;
 }
 
-.section3 .slider .slider-item img {
+.our-pets .slider .slider-item img {
   width: 100%;
 }
 
-.section3 .slider .slider-item > * {
+.our-pets .slider .slider-item > * {
   margin-bottom: 30px;
 }
 
-.section3 .slider .slider-item {
+.our-pets .slider .slider-item {
   width: 100%;
 }
 
-.section3 > button {
+.our-pets > button {
   margin: 0 auto;
 }
 
-.section3 .slider .slider-item .slider-item-button {
+.our-pets .slider .slider-item .slider-item-button {
   background-color: transparent !important;
   border: #f1cdb3 2px solid;
 }
@@ -69,18 +89,17 @@
 }
 
 @media screen and (max-width: 768px) {
-    
-  .section3 .slider-wrapper {
+  .our-pets .slider-wrapper {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
 
-  .section3 .slider-wrapper .slider-left-arrow {
+  .our-pets .slider-wrapper .slider-left-arrow {
     order: 2;
     margin-right: 60px;
   }
-  .section3 .slider-wrapper .slider-right-arrow {
+  .our-pets .slider-wrapper .slider-right-arrow {
     order: 3;
   }
   .slider {
