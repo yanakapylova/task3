@@ -22,3 +22,7 @@ h3 {
   box-shadow: none !important;
   align-self: self-start;
 }
+
+.App {
+  overflow-x: hidden;
+}
