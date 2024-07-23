@@ -8,6 +8,32 @@ export interface Pet {
 
 export const cards: Pet[] = [
   {
+    name: "Freddie",
+    breed: "Cat - British Shorthair",
+    description:
+      "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
+    image: "/img/slider/pets-freddie.png",
+    info: [
+      "Age: 2 months",
+      "Inoculations: none",
+      "Diseases: none",
+      "Parasites: none",
+    ],
+  },
+  {
+    name: "Charly",
+    breed: "Dog - Jack Russell Terrier ",
+    description:
+      "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
+    image: "/img/slider/pets-charly.png",
+    info: [
+      "Age: 2 months",
+      "Inoculations: none",
+      "Diseases: none",
+      "Parasites: none",
+    ],
+  },
+  {
     name: "Katrine",
     breed: "Cat - British Shorthair",
     description:
@@ -104,6 +130,19 @@ export const cards: Pet[] = [
     description:
       "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
     image: "/img/slider/pets-charly.png",
+    info: [
+      "Age: 2 months",
+      "Inoculations: none",
+      "Diseases: none",
+      "Parasites: none",
+    ],
+  },
+  {
+    name: "Freddie",
+    breed: "Cat - British Shorthair",
+    description:
+      "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
+    image: "/img/slider/pets-freddie.png",
     info: [
       "Age: 2 months",
       "Inoculations: none",

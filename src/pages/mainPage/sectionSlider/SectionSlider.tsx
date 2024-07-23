@@ -5,7 +5,7 @@ import { Pet } from "./pets-list";
 import { cards } from "./pets-list";
 
 export const SectionSlider = function () {
-  const [startSliderIndex, setStartSliderIndex] = useState(1);
+  const [startSliderIndex, setStartSliderIndex] = useState(0);
   const [activePopUp, setActivePopUp] = useState(cards[0]);
 
   const [currSliderArr, setCurrSliderArr]: any[] = useState([]);
