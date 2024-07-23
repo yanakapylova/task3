@@ -23,8 +23,8 @@ export const PopUp = function (props: Props) {
           <div className="subtitle">{props.item.breed}</div>
           <div className="description">{props.item.description}</div>
           <div className="info">
-            {props.item.info.map((item)=> {
-                return <div>{item}</div>
+            {props.item.info.map((item, key)=> {
+                return <div key={key}>{item}</div>
             })}
           </div>
         </div>

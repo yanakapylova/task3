@@ -23,6 +23,7 @@
   gap: 40px;
   margin: 0 auto;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .our-pets .navigation {
