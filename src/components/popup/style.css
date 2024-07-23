@@ -48,20 +48,20 @@
 }
 
 .popupWrapper .popup .info div {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .popupWrapper .popup .info div::before {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    background-color: #F1CDB3;
-    border-radius: 50%;
-    /* position: absolute; */
-    margin-right: 10px;
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #f1cdb3;
+  border-radius: 50%;
+  /* position: absolute; */
+  margin-right: 10px;
 }
 
 .popupWrapper .popup .close {
@@ -93,4 +93,24 @@
 
 .popupWrapper .popup .content-image img {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .popupWrapper .popup .content-image {
+    display: none;
+  }
+
+  .popupWrapper .popup .content-description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .popupWrapper .popup .content-description .description {
+    text-align: justify;
+  }
+  
+  .popupWrapper .popup .close {
+    top: -60px;
+    right: -30px;
+  }
 }
