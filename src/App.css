@@ -23,6 +23,6 @@ h3 {
   align-self: self-start;
 }
 
-.App {
-  overflow-x: hidden;
+.App button.MuiButtonBase-root:hover {
+  background-color: #fddcc4 !important;
 }

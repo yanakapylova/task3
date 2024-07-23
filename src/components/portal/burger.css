@@ -60,7 +60,7 @@
 
 .burger-menu-list {
   top: 0;
-  left: 0;
+  right: 0;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -69,9 +69,9 @@
   margin: 0;
   padding-top: 160px;
   background: #292929;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: 0.3s;
-  width: 100%;
+  min-width: 320px;
   height: 100vh;
 }
 
@@ -122,7 +122,6 @@
 
 .burger-checkbox:checked ~ .burger-menu-list {
   transform: translateX(0);
-  box-shadow: 2px 0px 10px #b7b7b7;
 }
 
 @media screen and (max-width: 768px) {
