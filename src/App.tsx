@@ -13,14 +13,19 @@ import "./components/popup/style.css";
 import { Portal } from "./components/portal/Portal";
 import { MainPage } from "./pages/mainPage/MainPage";
 import { OurPets } from "./pages/ourPets/OurPets";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Portal>
-        {/* <MainPage /> */}
-        <OurPets />
-      </Portal>
+      <BrowserRouter>
+        <Portal>
+          <Routes>
+            <Route index element={<MainPage />} />
+            <Route path="ourpets" element={<OurPets />} />
+          </Routes>
+        </Portal>
+      </BrowserRouter>
     </div>
   );
 }
