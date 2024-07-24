@@ -23,7 +23,7 @@ export const SectionSlider = function () {
     } else {
       itemsInRow = 1;
     }
-    
+
     setCurrSliderArr(() => sliderConstructor(startSliderIndex, itemsInRow));
 
     const arrowLeft: any = document.querySelector("#arrow-left");
@@ -59,12 +59,22 @@ export const SectionSlider = function () {
         <div className="slider">
           {currSliderArr.map((item: Pet) => {
             return (
-              <div className="sliderItem" key={`${item.name}${item.breed}${item.description}`}>
+              <div
+                className="sliderItem"
+                key={`${item.name}${item.breed}${item.description}`}
+              >
                 <div className="sliderItemImage">
                   <img src={item.image} alt={item.name} />
                 </div>
                 <div className="sliderItemName">{item.name}</div>
-                <SliderButton onClick={() => setActivePopUp(item)}>
+                <SliderButton
+                  onClick={() => {
+                    setActivePopUp(item);
+                    const popupWrapper: any =
+                      document.querySelector(".popupWrapper");
+                    popupWrapper.style.display = "flex";
+                  }}
+                >
                   Learn more
                 </SliderButton>
               </div>

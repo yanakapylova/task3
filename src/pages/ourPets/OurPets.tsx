@@ -97,19 +97,6 @@ export const OurPets = function () {
 
     const popupWrapper: any = document.querySelector(".popupWrapper");
     popupWrapper.style.display = "flex";
-    popupWrapper.addEventListener("click", () => {
-      popupWrapper.style.display = "none";
-    });
-
-    const popup: any = document.querySelector(".popupWrapper .popup");
-    popup.addEventListener("click", (e: any) => {
-      e.stopImmediatePropagation();
-    });
-
-    const close: any = document.querySelector(".popupWrapper .close");
-    close.addEventListener("click", () => {
-      popupWrapper.style.display = "none";
-    });
   }
 
   function handleSliderClick(step: number) {
@@ -143,7 +130,15 @@ export const OurPets = function () {
                   <img src={item.image} alt={item.name} />
                 </div>
                 <div className="sliderItemName">{item.name}</div>
-                <SliderButton onClick={() => buttonMore(item)}>
+                <SliderButton
+                  onClick={() => {
+                    setActivePopUp(item);
+
+                    const popupWrapper: any =
+                      document.querySelector(".popupWrapper");
+                    popupWrapper.style.display = "flex";
+                  }}
+                >
                   Learn more
                 </SliderButton>
               </div>
