@@ -4,21 +4,11 @@ import { SectionDonation } from "./sectionDonation/SectionDonation";
 import { SectionHelp } from "./sectionHelp/SectionHelp";
 import { SectionMain } from "./sectionMain/SectionMain";
 import { SectionSlider } from "./sectionSlider/SectionSlider";
+import { activePageMark } from "../../components/portal/activePage";
 
 export const MainPage = function () {
   useEffect(() => {
-    document.querySelector("header")?.classList.add("dark");
-    document.querySelector("header")?.classList.remove("light");
-
-    document.querySelector("header div.active")?.classList.remove("active");
-    document
-      .querySelector("header nav div:nth-child(1)")
-      ?.classList.add("active");
-
-      document.querySelector(".burgerMenuList div.active")?.classList.remove("active");
-    document
-      .querySelector(".burgerMenuList div:nth-child(1)")
-      ?.classList.add("active");
+    activePageMark()
   });
 
   useEffect(() => {

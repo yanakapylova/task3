@@ -5,6 +5,7 @@ import { PopUp } from "../../components/popup/PopUp";
 import SliderButton from "../../components/button/SliderButton";
 import PrimaryButton from "../../components/button/PrimaryButton";
 import SliderCircleButton from "../../components/button/SliderCircleButton";
+import { activePageMark } from "../../components/portal/activePage";
 
 export const OurPets = function () {
   const [startSliderIndex, setStartSliderIndex] = useState(0);
@@ -17,20 +18,7 @@ export const OurPets = function () {
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
-    document.querySelector("header")?.classList.add("light");
-    document.querySelector("header")?.classList.remove("dark");
-
-    document.querySelector("header div.active")?.classList.remove("active");
-    document
-      .querySelector("header nav div:nth-child(2)")
-      ?.classList.add("active");
-
-    document
-      .querySelector(".burgerMenuList div.active")
-      ?.classList.remove("active");
-    document
-      .querySelector(".burgerMenuList div:nth-child(2)")
-      ?.classList.add("active");
+    activePageMark()
   });
 
   useEffect(() => {
