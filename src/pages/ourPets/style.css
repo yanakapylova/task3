@@ -1,4 +1,4 @@
-.our-pets {
+.ourPets {
   padding: 80px 40px;
   background-color: #f6f6f6;
   text-align: center;
@@ -10,7 +10,7 @@
     margin-top: 50px;
   }
 
-  .slider-wrapper {
+  .sliderWrapper {
     display: flex;
     gap: 50px;
     margin: 0 auto;
@@ -23,7 +23,7 @@
       flex-wrap: wrap;
       justify-content: center;
 
-      .slider-item {
+      .sliderItem {
         background-color: #fafafa;
         font-size: 20px;
         font-family: Georgia, "Times New Roman", Times, serif;
@@ -54,7 +54,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .our-pets .slider-wrapper {
+  .ourPets .sliderWrapper {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;

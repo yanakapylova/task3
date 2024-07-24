@@ -13,13 +13,13 @@
     gap: 40px;
     margin-top: -90px;
 
-    .content-title {
+    .contentTitle {
       font-size: 44px;
       line-height: 130%;
       color: white;
     }
 
-    .content-subtitle {
+    .contentSubtitle {
       font-size: 15px;
       line-height: 160%;
       color: #cdcdcd;
@@ -27,7 +27,7 @@
     }
   }
 
-  .main-image {
+  .mainImage {
     width: 140%;
 
     img {
@@ -53,7 +53,7 @@
     }
   }
 
-  .section1 .main-image {
+  .section1 .mainImage {
     width: 70%;
 
     img {
@@ -73,12 +73,12 @@
       width: auto;
       align-items: center;
       
-      .content-title {
+      .contentTitle {
         text-align: center;
         font-size: 25px;
       }
       
-      .content-subtitle {
+      .contentSubtitle {
         text-align: center;
       }
     }

@@ -1,16 +1,16 @@
 export const SectionAbout = function () {
   return (
     <section className="section2">
-      <div className="about-img">
+      <div className="aboutImg">
         <img src="/img/about/about-pets.png" alt="dogs" />
       </div>
-      <div className="about-content">
-        <h3 className="content-title">
+      <div className="aboutContent">
+        <h3 className="contentTitle">
           About the shelter
           <br />
           “Cozy House”
         </h3>
-        <div className="content-subtitle">
+        <div className="contentSubtitle">
           <p>
             Currently we have 121 dogs and 342 cats on our hands and statistics
             show that only 20% of them will find a family. The others will

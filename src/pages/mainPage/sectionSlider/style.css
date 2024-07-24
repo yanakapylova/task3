@@ -10,7 +10,7 @@
     margin-top: 50px;
   }
 
-  .slider-wrapper {
+  .sliderWrapper {
     display: flex;
     gap: 50px;
     margin: 0 auto;
@@ -22,7 +22,7 @@
       margin: 0 auto;
       justify-content: center;
 
-      .slider-item {
+      .sliderItem {
         background-color: #fafafa;
         font-size: 20px;
         font-family: Georgia, "Times New Roman", Times, serif;
@@ -46,7 +46,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .section3 .slider-wrapper {
+  .section3 .sliderWrapper {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;

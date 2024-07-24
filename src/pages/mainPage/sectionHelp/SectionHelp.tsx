@@ -22,7 +22,7 @@ export const SectionHelp = function () {
         {Object.keys(row).map((name) => (
           <div className="item" key={row[name]}>
             <img src={row[name]} alt={name} />
-            <div className="item-name">{name}</div>
+            <div className="itemName">{name}</div>
           </div>
         ))}
       </div>

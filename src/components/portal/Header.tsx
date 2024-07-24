@@ -5,8 +5,8 @@ export const Header = function () {
   return (
     <header>
       <div className="logo">
-        <div className="logo-title">Cozy House</div>
-        <div className="logo-subtitle">Shelter for pets in Boston</div>
+        <div className="logoTitle">Cozy House</div>
+        <div className="logoSubtitle">Shelter for pets in Boston</div>
       </div>
       <nav>
         <div className="active">
@@ -23,24 +23,24 @@ export const Header = function () {
         </div>
       </nav>
 
-      <div className="burger-menu">
+      <div className="burgerMenu">
         <input
           type="checkbox"
-          id="burger-checkbox"
-          className="burger-checkbox"
+          id="burgerCheckbox"
+          className="burgerCheckbox"
         />
-        <label htmlFor="burger-checkbox" className="burger"></label>
-        <div className="burger-menu-list">
-          <div className="burger-menu-item active">
+        <label htmlFor="burgerCheckbox" className="burger"></label>
+        <div className="burgerMenuList">
+          <div className="burgerMenuItem active">
             <Link to="/">About the shelter</Link>
           </div>
-          <div className="burger-menu-item">
+          <div className="burgerMenuItem">
             <Link to="/ourpets">Our pets</Link>
           </div>
-          <div className="burger-menu-item">
+          <div className="burgerMenuItem">
             <a href="/#help">Help the shelter</a>
           </div>
-          <div className="burger-menu-item">
+          <div className="burgerMenuItem">
             <a href="/#contacts">Contacts</a>
           </div>
         </div>

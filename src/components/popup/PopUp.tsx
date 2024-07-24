@@ -35,10 +35,10 @@ export const PopUp = function (props: Props) {
         <SliderCircleButton className="close">
           <img src="/img/slider/popup-close.png" alt="close button" />
         </SliderCircleButton>
-        <div className="content-image">
+        <div className="contentImage">
           <img src={props.item.image} alt={props.item.name} />
         </div>
-        <div className="content-description">
+        <div className="contentDescription">
           <div className="title">{props.item.name}</div>
           <div className="subtitle">{props.item.breed}</div>
           <div className="description">{props.item.description}</div>

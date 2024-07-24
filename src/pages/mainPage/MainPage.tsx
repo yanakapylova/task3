@@ -15,9 +15,9 @@ export const MainPage = function () {
       .querySelector("header nav div:nth-child(1)")
       ?.classList.add("active");
 
-      document.querySelector(".burger-menu-list div.active")?.classList.remove("active");
+      document.querySelector(".burgerMenuList div.active")?.classList.remove("active");
     document
-      .querySelector(".burger-menu-list div:nth-child(1)")
+      .querySelector(".burgerMenuList div:nth-child(1)")
       ?.classList.add("active");
   });
 

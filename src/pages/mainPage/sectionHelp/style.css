@@ -20,7 +20,7 @@
       height: 60px;
     }
 
-    .item-name {
+    .itemName {
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: 20px;
       line-height: 1.15;
@@ -52,7 +52,7 @@
       .item {
         max-width: 120px;
 
-        .item-name {
+        .itemName {
           font-size: 15px;
         }
       }

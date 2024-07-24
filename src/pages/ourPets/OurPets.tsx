@@ -26,10 +26,10 @@ export const OurPets = function () {
       ?.classList.add("active");
 
     document
-      .querySelector(".burger-menu-list div.active")
+      .querySelector(".burgerMenuList div.active")
       ?.classList.remove("active");
     document
-      .querySelector(".burger-menu-list div:nth-child(2)")
+      .querySelector(".burgerMenuList div:nth-child(2)")
       ?.classList.add("active");
   });
 
@@ -60,7 +60,7 @@ export const OurPets = function () {
 
         if (currSliderIndex == cards.length) {
           flag = false;
-          let button: any = document.querySelector(".slider-right-arrow");
+          let button: any = document.querySelector(".sliderRightArrow");
           button.disabled = true;
           break;
         }
@@ -70,26 +70,22 @@ export const OurPets = function () {
       }
     }
 
-    let button_right: any = document.querySelector(".slider-right-arrow");
+    let button_right: any = document.querySelector(".sliderRightArrow");
     button_right.disabled =
       startSliderIndex + itemsInRow * rowsNumber > cards.length - 1
         ? true
         : false;
 
-    let button_left: any = document.querySelector(".slider-left-arrow");
+    let button_left: any = document.querySelector(".sliderLeftArrow");
     button_left.disabled = startSliderIndex == 0 ? true : false;
 
-    let button_d_right: any = document.querySelector(
-      ".slider-right-double-arrow"
-    );
+    let button_d_right: any = document.querySelector(".sliderRightDoubleArrow");
     button_d_right.disabled =
       startSliderIndex + itemsInRow * rowsNumber * 2 > cards.length - 1
         ? true
         : false;
 
-    let button_d_left: any = document.querySelector(
-      ".slider-left-double-arrow"
-    );
+    let button_d_left: any = document.querySelector(".sliderLeftDoubleArrow");
     button_d_left.disabled =
       startSliderIndex - itemsInRow * rowsNumber * 2 < 0 ? true : false;
 
@@ -129,21 +125,24 @@ export const OurPets = function () {
   }
 
   return (
-    <main className="our-pets">
+    <main className="ourPets">
       <h3>
         Our friends who
         <br />
         are looking for a house
       </h3>
-      <div className="slider-wrapper">
+      <div className="sliderWrapper">
         <div className="slider">
           {currSliderArr.map((item: Pet) => {
             return (
-              <div className="slider-item" key={`${item.name}${item.breed}${item.description}`}>
-                <div className="slider-item-image">
+              <div
+                className="sliderItem"
+                key={`${item.name}${item.breed}${item.description}`}
+              >
+                <div className="sliderItemImage">
                   <img src={item.image} alt={item.name} />
                 </div>
-                <div className="slider-item-name">{item.name}</div>
+                <div className="sliderItemName">{item.name}</div>
                 <SliderButton onClick={() => buttonMore(item)}>
                   Learn more
                 </SliderButton>
@@ -155,14 +154,14 @@ export const OurPets = function () {
       <PopUp item={activePopUp} />
       <div className="navigation">
         <SliderCircleButton
-          className="slider-left-double-arrow arrow"
+          className="sliderLeftDoubleArrow arrow"
           onClick={() => handleSliderClick(-2)}
         >
           &lt;&lt;
         </SliderCircleButton>
 
         <SliderCircleButton
-          className="slider-left-arrow arrow"
+          className="sliderLeftArrow arrow"
           onClick={() => handleSliderClick(-1)}
         >
           &lt;
@@ -172,14 +171,14 @@ export const OurPets = function () {
           {pageNumber}
         </SliderCircleButton>
         <SliderCircleButton
-          className="slider-right-arrow arrow"
+          className="sliderRightArrow arrow"
           onClick={() => handleSliderClick(1)}
         >
           &gt;
         </SliderCircleButton>
 
         <SliderCircleButton
-          className="slider-right-double-arrow arrow"
+          className="sliderRightDoubleArrow arrow"
           onClick={() => handleSliderClick(2)}
         >
           &gt;&gt;

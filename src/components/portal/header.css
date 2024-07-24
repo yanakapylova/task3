@@ -14,11 +14,11 @@ header {
     }
 
     .logo {
-      .logo-title {
+      .logoTitle {
         color: #f1cdb3;
       }
 
-      .logo-subtitle {
+      .logoSubtitle {
         color: #ffffff;
       }
     }
@@ -39,11 +39,11 @@ header {
     }
 
     .logo {
-      .logo-title {
+      .logoTitle {
         color: #545454;
       }
 
-      .logo-subtitle {
+      .logoSubtitle {
         color: #292929;
       }
     }
@@ -70,11 +70,11 @@ header {
     text-align: center;
     z-index: 1001;
 
-    .logo-title {
+    .logoTitle {
       font-size: 32px;
     }
 
-    .logo-subtitle {
+    .logoSubtitle {
       font-size: 13px;
       letter-spacing: 1.1px;
     }

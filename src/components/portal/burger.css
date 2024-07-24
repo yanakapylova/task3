@@ -1,8 +1,8 @@
-.burger-menu {
+.burgerMenu {
   display: none;
   z-index: 1000;
 
-  .burger-checkbox {
+  .burgerCheckbox {
     position: absolute;
     visibility: hidden;
 
@@ -21,7 +21,7 @@
         transition: 0.3s;
       }
 
-      ~ .burger-menu-list {
+      ~ .burgerMenuList {
         transform: translateX(0);
       }
     }
@@ -63,7 +63,7 @@
     }
   }
 
-  .burger-menu-list {
+  .burgerMenuList {
     top: 0;
     right: 0;
     position: absolute;
@@ -79,7 +79,7 @@
     min-width: 320px;
     height: 100vh;
 
-    .burger-menu-item {
+    .burgerMenuItem {
       text-align: center;
 
       a {
@@ -109,7 +109,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .burger-menu {
+  .burgerMenu {
     display: block;
     margin-top: 160px;
   }

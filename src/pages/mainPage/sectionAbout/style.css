@@ -5,12 +5,12 @@
   gap: 120px;
   justify-content: center;
 
-  .about-content {
+  .aboutContent {
     h3 {
       margin-top: 25px;
     }
 
-    .content-subtitle {
+    .contentSubtitle {
       font-size: 15px;
       line-height: 160%;
       color: #4c4c4c;
@@ -27,7 +27,7 @@
     gap: 80px;
     align-items: center;
 
-    .about-img {
+    .aboutImg {
       width: 45%;
 
       img {
@@ -40,20 +40,20 @@
 @media screen and (max-width: 768px) {
   .section2 {
     gap: 40px;
-    .about-content {
-      .content-title {
+    .aboutContent {
+      .contentTitle {
         font-size: 25px;
         text-align: center;
       }
 
-      .content-subtitle {
+      .contentSubtitle {
         width: auto;
         text-align: justify;
       }
     }
 
-    .about-img {
-     max-width: 260px;
+    .aboutImg {
+      max-width: 260px;
     }
   }
 }

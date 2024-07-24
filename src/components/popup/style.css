@@ -30,7 +30,7 @@
       }
     }
 
-    .content-image {
+    .contentImage {
       width: 50%;
 
       img {
@@ -38,7 +38,7 @@
       }
     }
 
-    .content-description {
+    .contentDescription {
       text-align: left;
       width: 40%;
 

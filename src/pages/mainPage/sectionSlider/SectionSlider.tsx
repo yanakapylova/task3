@@ -49,7 +49,7 @@ export const SectionSlider = function () {
         <br />
         are looking for a house
       </h3>
-      <div className="slider-wrapper">
+      <div className="sliderWrapper">
         <SliderCircleButton
           id="arrow-left"
           onClick={() => handleSliderClick(-1)}
@@ -59,11 +59,11 @@ export const SectionSlider = function () {
         <div className="slider">
           {currSliderArr.map((item: Pet) => {
             return (
-              <div className="slider-item" key={`${item.name}${item.breed}${item.description}`}>
-                <div className="slider-item-image">
+              <div className="sliderItem" key={`${item.name}${item.breed}${item.description}`}>
+                <div className="sliderItemImage">
                   <img src={item.image} alt={item.name} />
                 </div>
-                <div className="slider-item-name">{item.name}</div>
+                <div className="sliderItemName">{item.name}</div>
                 <SliderButton onClick={() => setActivePopUp(item)}>
                   Learn more
                 </SliderButton>
