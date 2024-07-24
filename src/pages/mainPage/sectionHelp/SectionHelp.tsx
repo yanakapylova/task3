@@ -19,8 +19,8 @@ export const SectionHelp = function () {
         our shelter
       </h3>
       <div className="row">
-        {Object.keys(row).map((name, key) => (
-          <div className="item" key={key}>
+        {Object.keys(row).map((name) => (
+          <div className="item" key={row[name]}>
             <img src={row[name]} alt={name} />
             <div className="item-name">{name}</div>
           </div>

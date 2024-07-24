@@ -5,88 +5,52 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
-}
 
-.our-pets h3 {
-  margin-top: 50px;
-}
+  h3 {
+    margin-top: 50px;
+  }
 
-.our-pets .slider-wrapper {
-  display: flex;
-  gap: 50px;
-  margin: 0 auto;
-  align-items: center;
-}
+  .slider-wrapper {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+    align-items: center;
 
-.our-pets .slider {
-  display: flex;
-  gap: 40px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    .slider {
+      display: flex;
+      gap: 40px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
 
-.our-pets .navigation {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
+      .slider-item {
+        background-color: #fafafa;
+        font-size: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        letter-spacing: 0.06em;
+        max-width: 270px;
+        width: 100%;
 
-.our-pets button.arrow {
-  width: 52px;
-  height: 52px;
-  border: #f1cdb3 2px solid;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-}
-.our-pets button.arrow:disabled {
-  border: #CDCDCD 2px solid;
+        img {
+          width: 100%;
+        }
 
-}
+        > * {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
 
-.our-pets .page-number {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f1cdb3;
-}
+  .navigation {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
 
-.our-pets .slider .slider-item {
-  background-color: #fafafa;
-  font-size: 20px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  letter-spacing: 0.06em;
-  max-width: 270px;
-}
-
-.our-pets .slider .slider-item img {
-  width: 100%;
-}
-
-.our-pets .slider .slider-item > * {
-  margin-bottom: 30px;
-}
-
-.our-pets .slider .slider-item {
-  width: 100%;
-}
-
-.our-pets > button {
-  margin: 0 auto;
-}
-
-.our-pets .slider .slider-item .slider-item-button {
-  background-color: transparent !important;
-  border: #f1cdb3 2px solid;
-}
-
-@media screen and (max-width: 1280px) {
+  > button {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -94,17 +58,5 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-  }
-
-  .our-pets .slider-wrapper .slider-left-arrow {
-    order: 2;
-    margin-right: 60px;
-  }
-  .our-pets .slider-wrapper .slider-right-arrow {
-    order: 3;
-  }
-  .slider {
-    order: 1;
-    width: 100%;
   }
 }

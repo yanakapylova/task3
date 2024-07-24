@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Pet } from "../mainPage/sectionSlider/pets-list";
 import { cards } from "../mainPage/sectionSlider/pets-list";
-import { Button } from "@mui/material";
 import { PopUp } from "../../components/popup/PopUp";
+import SliderButton from "../../components/button/SliderButton";
+import PrimaryButton from "../../components/button/PrimaryButton";
+import SliderCircleButton from "../../components/button/SliderCircleButton";
 
 export const OurPets = function () {
   const [startSliderIndex, setStartSliderIndex] = useState(0);
@@ -137,17 +139,14 @@ export const OurPets = function () {
         <div className="slider">
           {currSliderArr.map((item: Pet) => {
             return (
-              <div className="slider-item">
+              <div className="slider-item" key={`${item.name}${item.breed}${item.description}`}>
                 <div className="slider-item-image">
-                  <img src={item.image} alt="" />
+                  <img src={item.image} alt={item.name} />
                 </div>
                 <div className="slider-item-name">{item.name}</div>
-                <Button
-                  className="slider-item-button"
-                  onClick={() => buttonMore(item)}
-                >
+                <SliderButton onClick={() => buttonMore(item)}>
                   Learn more
-                </Button>
+                </SliderButton>
               </div>
             );
           })}
@@ -155,33 +154,38 @@ export const OurPets = function () {
       </div>
       <PopUp item={activePopUp} />
       <div className="navigation">
-        <button
+        <SliderCircleButton
           className="slider-left-double-arrow arrow"
           onClick={() => handleSliderClick(-2)}
         >
           &lt;&lt;
-        </button>
-        <button
+        </SliderCircleButton>
+
+        <SliderCircleButton
           className="slider-left-arrow arrow"
           onClick={() => handleSliderClick(-1)}
         >
           &lt;
-        </button>
-        <div className="page-number">{pageNumber}</div>
-        <button
+        </SliderCircleButton>
+
+        <SliderCircleButton className="pageNumber">
+          {pageNumber}
+        </SliderCircleButton>
+        <SliderCircleButton
           className="slider-right-arrow arrow"
           onClick={() => handleSliderClick(1)}
         >
           &gt;
-        </button>
-        <button
+        </SliderCircleButton>
+
+        <SliderCircleButton
           className="slider-right-double-arrow arrow"
           onClick={() => handleSliderClick(2)}
         >
           &gt;&gt;
-        </button>
+        </SliderCircleButton>
       </div>
-      <Button variant="contained">Get to know the rest</Button>
+      <PrimaryButton>Get to know the rest</PrimaryButton>
     </main>
   );
 };

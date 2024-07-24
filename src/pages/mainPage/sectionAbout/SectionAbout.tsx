@@ -2,7 +2,7 @@ export const SectionAbout = function () {
   return (
     <section className="section2">
       <div className="about-img">
-        <img src="/img/about/about-pets.png" alt="" />
+        <img src="/img/about/about-pets.png" alt="dogs" />
       </div>
       <div className="about-content">
         <h3 className="content-title">

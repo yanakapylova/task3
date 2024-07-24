@@ -5,86 +5,66 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
-}
 
-.section3 h3 {
-  margin-top: 50px;
-}
+  h3 {
+    margin-top: 50px;
+  }
 
-.section3 .slider-wrapper {
-  display: flex;
-  gap: 50px;
-  margin: 0 auto;
-  align-items: center;
-}
+  .slider-wrapper {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+    align-items: center;
 
-.section3 .slider {
-  display: flex;
-  gap: 90px;
-  margin: 0 auto;
-}
+    .slider {
+      display: flex;
+      gap: 90px;
+      margin: 0 auto;
+      justify-content: center;
 
-.section3 .slider-wrapper .slider-left-arrow,
-.section3 .slider-wrapper .slider-right-arrow {
-  width: 52px;
-  height: 52px;
-  border: #f1cdb3 2px solid;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-}
+      .slider-item {
+        background-color: #fafafa;
+        font-size: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        letter-spacing: 0.06em;
+        max-width: 270px;
 
-.section3 .slider .slider-item {
-  background-color: #fafafa;
-  font-size: 20px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  letter-spacing: 0.06em;
-  width: 270px;
-}
+        > * {
+          margin-bottom: 30px;
+        }
 
-.section3 .slider .slider-item img {
-  width: 100%;
-}
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 
-.section3 .slider .slider-item > * {
-  margin-bottom: 30px;
-}
-
-.section3 .slider .slider-item {
-  width: 100%;
-}
-
-.section3 > button {
-  margin: 0 auto;
-}
-
-.section3 .slider .slider-item .slider-item-button {
-  background-color: transparent !important;
-  border: #f1cdb3 2px solid;
-}
-
-@media screen and (max-width: 1280px) {
+  > button {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    
   .section3 .slider-wrapper {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-  }
 
-  .section3 .slider-wrapper .slider-left-arrow {
-    order: 2;
-    margin-right: 60px;
-  }
-  .section3 .slider-wrapper .slider-right-arrow {
-    order: 3;
-  }
-  .slider {
-    order: 1;
-    width: 100%;
+
+    .slider {
+      order: 1;
+      width: 100%;
+    }
+
+    #arrow-left {
+      order: 2;
+      margin-right: 60px;
+    }
+
+    #arrow-right {
+      order: 3;
+    }
+
   }
 }

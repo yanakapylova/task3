@@ -1,30 +1,19 @@
-import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import { PopUp } from "../../../components/popup/PopUp";
 import { Pet } from "./pets-list";
 import { cards } from "./pets-list";
 import { Link } from "react-router-dom";
+import PrimaryButton from "../../../components/button/PrimaryButton";
+import SliderButton from "../../../components/button/SliderButton";
+import SliderCircleButton from "../../../components/button/SliderCircleButton";
+import { sliderConstructor } from "./sliderConstructor";
 
 export const SectionSlider = function () {
   const [startSliderIndex, setStartSliderIndex] = useState(0);
   const [activePopUp, setActivePopUp] = useState(cards[0]);
-
   const [currSliderArr, setCurrSliderArr]: any[] = useState([]);
-  
+
   useEffect(() => {
-    if (window.innerWidth >= 1280) {
-      setCurrSliderArr([...currSliderArr, cards[0], cards[1], cards[2]]);
-    } else if (window.innerWidth >= 768) {
-      setCurrSliderArr([cards[0], cards[1]]);
-    } else {
-      setCurrSliderArr([cards[0]]);
-    }
-  }, []);
-
-  function sliderConstructor() {
-    let currSliderIndex: number = startSliderIndex;
-    let currSliderArrCONSTRUCTOR: Pet[] = [];
-
     let itemsInRow: number;
 
     if (window.innerWidth >= 1280) {
@@ -34,47 +23,23 @@ export const SectionSlider = function () {
     } else {
       itemsInRow = 1;
     }
+    
+    setCurrSliderArr(() => sliderConstructor(startSliderIndex, itemsInRow));
 
-    for (let i = 0; i < itemsInRow; i++) {
-      currSliderArrCONSTRUCTOR.push(cards[currSliderIndex]);
-      currSliderIndex++;
-
-      if (currSliderIndex == cards.length) {
-        currSliderIndex = 0;
-      }
-    }
-
-    return currSliderArrCONSTRUCTOR;
-  }
-
-  function buttonMore(activeItem: Pet) {
-    setActivePopUp(activeItem);
-
-    const popupWrapper: any = document.querySelector(".popupWrapper");
-    popupWrapper.style.display = "flex";
-    popupWrapper.addEventListener("click", () => {
-      popupWrapper.style.display = "none";
-    });
-
-    const popup: any = document.querySelector(".popupWrapper .popup");
-    popup.addEventListener("click", (e: any) => {
-      e.stopImmediatePropagation();
-    });
-
-    const close: any = document.querySelector(".popupWrapper .close");
-    close.addEventListener("click", () => {
-      popupWrapper.style.display = "none";
-    });
-  }
-
-  function handleSliderClick() {
-    if (startSliderIndex == cards.length - 1) {
-      setStartSliderIndex(0);
+    const arrowLeft: any = document.querySelector("#arrow-left");
+    const arrowRight: any = document.querySelector("#arrow-right");
+    if (startSliderIndex + itemsInRow > cards.length - 1) {
+      arrowRight.disabled = true;
+    } else if (startSliderIndex == 0) {
+      arrowLeft.disabled = true;
     } else {
-      setStartSliderIndex((prev) => prev + 1);
+      arrowLeft.disabled = false;
+      arrowRight.disabled = false;
     }
+  }, [startSliderIndex]);
 
-    setCurrSliderArr(sliderConstructor());
+  function handleSliderClick(step: number) {
+    setStartSliderIndex((prev) => prev + step);
   }
 
   return (
@@ -85,31 +50,38 @@ export const SectionSlider = function () {
         are looking for a house
       </h3>
       <div className="slider-wrapper">
-        <button className="slider-left-arrow">←</button>
+        <SliderCircleButton
+          id="arrow-left"
+          onClick={() => handleSliderClick(-1)}
+        >
+          ←
+        </SliderCircleButton>
         <div className="slider">
-          {currSliderArr.map((item: Pet, key: any) => {
+          {currSliderArr.map((item: Pet) => {
             return (
-              <div className="slider-item" key={key}>
+              <div className="slider-item" key={`${item.name}${item.breed}${item.description}`}>
                 <div className="slider-item-image">
-                  <img src={item.image} alt="" />
+                  <img src={item.image} alt={item.name} />
                 </div>
                 <div className="slider-item-name">{item.name}</div>
-                <Button
-                  className="slider-item-button"
-                  onClick={() => buttonMore(item)}
-                >
+                <SliderButton onClick={() => setActivePopUp(item)}>
                   Learn more
-                </Button>
+                </SliderButton>
               </div>
             );
           })}
         </div>
-        <button className="slider-right-arrow" onClick={handleSliderClick}>
+        <SliderCircleButton
+          id="arrow-right"
+          onClick={() => handleSliderClick(1)}
+        >
           →
-        </button>
+        </SliderCircleButton>
       </div>
       <PopUp item={activePopUp} />
-      <Link to="/ourpets"><Button variant="contained">Get to know the rest</Button></ Link>
+      <Link to="/ourpets">
+        <PrimaryButton>Get to know the rest</PrimaryButton>
+      </Link>
     </section>
   );
 };
