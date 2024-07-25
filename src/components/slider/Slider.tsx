@@ -38,10 +38,6 @@ export const Slider = function (props: any) {
     return currSliderArrCONSTRUCTOR;
   }
 
-  function handleButtonClick(step: number) {
-    props.handleSliderClick(step); // Call the function from the parent component
-  }
-
   function buttonMore(activeItem: Pet) {
     setActivePopUp(activeItem);
 
