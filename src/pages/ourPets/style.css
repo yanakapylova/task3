@@ -10,38 +10,6 @@
     margin-top: 50px;
   }
 
-  .sliderWrapper {
-    display: flex;
-    gap: 50px;
-    margin: 0 auto;
-    align-items: center;
-
-    .slider {
-      display: flex;
-      gap: 40px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      .sliderItem {
-        background-color: #fafafa;
-        font-size: 20px;
-        font-family: Georgia, "Times New Roman", Times, serif;
-        letter-spacing: 0.06em;
-        max-width: 270px;
-        width: 100%;
-
-        img {
-          width: 100%;
-        }
-
-        > * {
-          margin-bottom: 30px;
-        }
-      }
-    }
-  }
-
   .navigation {
     display: flex;
     gap: 20px;
@@ -50,13 +18,5 @@
 
   > button {
     margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .ourPets .sliderWrapper {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
   }
 }
