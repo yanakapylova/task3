@@ -10,49 +10,25 @@
     margin-top: 50px;
   }
 
-  .sliderWrapper {
+  > button {
+    margin: 0 auto;
+  }
+
+  .sliderAndNavigation {
     display: flex;
     gap: 50px;
     margin: 0 auto;
     align-items: center;
-
-    .slider {
-      display: flex;
-      gap: 90px;
-      margin: 0 auto;
-      justify-content: center;
-
-      .sliderItem {
-        background-color: #fafafa;
-        font-size: 20px;
-        font-family: Georgia, "Times New Roman", Times, serif;
-        letter-spacing: 0.06em;
-        max-width: 270px;
-
-        > * {
-          margin-bottom: 30px;
-        }
-
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  > button {
-    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .section3 .sliderWrapper {
-    flex-wrap: wrap;
+  .section3 .sliderAndNavigation {
     justify-content: center;
     gap: 20px;
-
-
-    .slider {
+    flex-wrap: wrap;
+    
+    .container {
       order: 1;
       width: 100%;
     }
@@ -65,6 +41,5 @@
     #arrow-right {
       order: 3;
     }
-
   }
 }

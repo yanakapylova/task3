@@ -7,6 +7,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
+  left: 0;
   z-index: 1100;
   background-color: rgba(0, 0, 0, 0.276);
 
@@ -83,6 +84,31 @@
           align-items: center;
           margin-top: 10px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popupWrapper {
+    padding: 40px;
+    width: auto;
+
+    .popup {
+      padding: 10px;
+      width: 100%;
+
+      .contentImage {
+        display: none;
+      }
+      .contentDescription {
+        width: 100%;
+      }
+
+      .close {
+        position: absolute;
+        top: -55px;
+        right: -30px;
       }
     }
   }
