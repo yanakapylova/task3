@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cards } from "../mainPage/sectionSlider/pets-list";
 import PrimaryButton from "../../components/button/PrimaryButton";
 import { activePageMark } from "../../components/portal/activePage";
@@ -26,28 +26,29 @@ export const OurPets = function () {
     }
   }, []);
 
+  const buttonRight: any = useRef<HTMLButtonElement>();
+  const buttonLeft: any = useRef<HTMLButtonElement>();
+  const buttonDoubleRight: any = useRef<HTMLButtonElement>();
+  const buttonDoubleLeft: any = useRef<HTMLButtonElement>();
+
   function navigationControl(
     startSliderIndex: number,
     itemsInRow: number,
     rowsNumber: number
   ) {
-    let button_right: any = document.querySelector(".sliderRightArrow");
-    button_right.disabled =
+    buttonRight.current.disabled =
       startSliderIndex + itemsInRow * rowsNumber > cards.length - 1
         ? true
         : false;
 
-    let button_left: any = document.querySelector(".sliderLeftArrow");
-    button_left.disabled = startSliderIndex == 0 ? true : false;
+    buttonLeft.current.disabled = startSliderIndex == 0 ? true : false;
 
-    let button_d_right: any = document.querySelector(".sliderRightDoubleArrow");
-    button_d_right.disabled =
+    buttonDoubleRight.current.disabled =
       startSliderIndex + itemsInRow * rowsNumber * 2 > cards.length - 1
         ? true
         : false;
 
-    let button_d_left: any = document.querySelector(".sliderLeftDoubleArrow");
-    button_d_left.disabled =
+    buttonDoubleLeft.current.disabled =
       startSliderIndex - itemsInRow * rowsNumber * 2 < 0 ? true : false;
   }
 
@@ -79,14 +80,14 @@ export const OurPets = function () {
       />
       <div className="navigation">
         <SliderCircleButton
-          className="sliderLeftDoubleArrow arrow"
+          ref={buttonDoubleLeft}
           onClick={() => handleSliderClick(-2)}
         >
           &lt;&lt;
         </SliderCircleButton>
 
         <SliderCircleButton
-          className="sliderLeftArrow arrow"
+          ref={buttonLeft}
           onClick={() => handleSliderClick(-1)}
         >
           &lt;
@@ -97,14 +98,14 @@ export const OurPets = function () {
         </SliderCircleButton>
 
         <SliderCircleButton
-          className="sliderRightArrow arrow"
+          ref={buttonRight}
           onClick={() => handleSliderClick(1)}
         >
           &gt;
         </SliderCircleButton>
 
         <SliderCircleButton
-          className="sliderRightDoubleArrow arrow"
+          ref={buttonDoubleRight}
           onClick={() => handleSliderClick(2)}
         >
           &gt;&gt;

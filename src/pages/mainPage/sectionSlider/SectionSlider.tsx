@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cards } from "./pets-list";
 import { Link } from "react-router-dom";
 import PrimaryButton from "../../../components/button/PrimaryButton";
@@ -22,16 +22,17 @@ export const SectionSlider = function () {
     setRowsNumber(() => 1);
   }, []);
 
+  const buttonLeft: any = useRef<HTMLButtonElement>();
+  const buttonRight: any = useRef<HTMLButtonElement>();
+
   function navigationControl() {
-    const arrowLeft: any = document.querySelector("#arrow-left");
-    const arrowRight: any = document.querySelector("#arrow-right");
     if (startSliderIndex + itemsInRow > cards.length - 1) {
-      arrowRight.disabled = true;
+      buttonRight.current.disabled = true;
     } else if (startSliderIndex == 0) {
-      arrowLeft.disabled = true;
+      buttonLeft.current.disabled = true;
     } else {
-      arrowLeft.disabled = false;
-      arrowRight.disabled = false;
+      buttonLeft.current.disabled = false;
+      buttonRight.current.disabled = false;
     }
   }
 
@@ -48,6 +49,7 @@ export const SectionSlider = function () {
       </h3>
       <div className="sliderAndNavigation">
         <SliderCircleButton
+          ref={buttonLeft}
           id="arrow-left"
           onClick={() => handleSliderClick(-1)}
         >
@@ -62,6 +64,7 @@ export const SectionSlider = function () {
         />
 
         <SliderCircleButton
+          ref={buttonRight}
           id="arrow-right"
           onClick={() => handleSliderClick(1)}
         >
