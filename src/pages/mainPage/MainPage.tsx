@@ -1,14 +1,19 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { SectionAbout } from "./sectionAbout/SectionAbout";
 import { SectionDonation } from "./sectionDonation/SectionDonation";
 import { SectionHelp } from "./sectionHelp/SectionHelp";
 import { SectionMain } from "./sectionMain/SectionMain";
 import { SectionSlider } from "./sectionSlider/SectionSlider";
 import { activePageMark } from "../../components/portal/activePage";
+import { ThemeContext } from "../../components/portal/themeContext";
 
 export const MainPage = function () {
+
+  const {isDark, setIsDark} = useContext(ThemeContext)
+  
   useEffect(() => {
-    activePageMark()
+    // activePageMark()
+    setIsDark(true)
   });
 
   useEffect(() => {
