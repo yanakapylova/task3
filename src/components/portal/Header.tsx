@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "./themeContext";
 
 export const Header = function () {
+  const { isDark, setIsDark } = useContext(ThemeContext);
+
   return (
-    <header>
+    <header className={isDark ? "dark" : "light"}>
       <div className="logo">
         <div className="logoTitle">Cozy House</div>
         <div className="logoSubtitle">Shelter for pets in Boston</div>
@@ -24,11 +27,7 @@ export const Header = function () {
       </nav>
 
       <div className="burgerMenu">
-        <input
-          type="checkbox"
-          id="burgerCheckbox"
-          className="burgerCheckbox"
-        />
+        <input type="checkbox" id="burgerCheckbox" className="burgerCheckbox" />
         <label htmlFor="burgerCheckbox" className="burger"></label>
         <div className="burgerMenuList">
           <div className="burgerMenuItem active">

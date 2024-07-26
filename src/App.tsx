@@ -15,20 +15,23 @@ import { Portal } from "./components/portal/Portal";
 import { MainPage } from "./pages/mainPage/MainPage";
 import { OurPets } from "./pages/ourPets/OurPets";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeContext } from "./components/portal/themeContext";
 
 function App() {
-
+  const [isDark, setIsDark] = useState(true);
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Portal>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="ourpets" element={<OurPets />} />
-          </Routes>
-        </Portal>
-      </BrowserRouter>
-    </div>
+    <ThemeContext.Provider value={{ isDark, setIsDark }}>
+      <div className="App">
+        <BrowserRouter>
+          <Portal>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="ourpets" element={<OurPets />} />
+            </Routes>
+          </Portal>
+        </BrowserRouter>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
