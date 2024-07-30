@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { cards } from "../mainPage/sectionSlider/pets-list";
 import PrimaryButton from "../../components/button/PrimaryButton";
-import { activePageMark } from "../../components/portal/activePage";
 import { Slider } from "../../components/slider/Slider";
 import SliderCircleButton from "../../components/button/SliderCircleButton";
 import { ThemeContext } from "../../components/portal/themeContext";
@@ -11,7 +10,6 @@ export const OurPets = function () {
 
   useEffect(() => {
     setIsDark(false);
-    activePageMark();
   });
 
   const [itemsInRow, setItemsInRow] = useState(0);

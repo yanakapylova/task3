@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ThemeContext } from "./themeContext";
 
 export const Header = function () {
@@ -12,11 +12,11 @@ export const Header = function () {
         <div className="logoSubtitle">Shelter for pets in Boston</div>
       </div>
       <nav>
-        <div className="active">
-          <Link to="/">About the shelter</Link>
+        <div>
+          <NavLink to="/">About the shelter</NavLink>
         </div>
         <div>
-          <Link to="/ourpets">Our pets</Link>
+          <NavLink to="/ourpets">Our pets</NavLink>
         </div>
         <div>
           <a href="/#help">Help the shelter</a>
@@ -31,10 +31,10 @@ export const Header = function () {
         <label htmlFor="burgerCheckbox" className="burger"></label>
         <div className="burgerMenuList">
           <div className="burgerMenuItem active">
-            <Link to="/">About the shelter</Link>
+            <NavLink to="/">About the shelter</NavLink>
           </div>
           <div className="burgerMenuItem">
-            <Link to="/ourpets">Our pets</Link>
+            <NavLink to="/ourpets">Our pets</NavLink>
           </div>
           <div className="burgerMenuItem">
             <a href="/#help">Help the shelter</a>
