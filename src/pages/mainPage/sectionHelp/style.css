@@ -1,61 +1,61 @@
 .section4 {
   text-align: center;
   padding: 60px 40px;
-}
 
-.section4 h3 {
-  margin-bottom: 60px;
-}
+  h3 {
+    margin-bottom: 60px;
+  }
 
-.section4 .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 120px;
-  justify-content: center;
-}
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 120px;
+    justify-content: center;
+  }
 
-.section4 .row .item img {
-  margin-bottom: 22px;
-  width: 60px;
-  height: 60px;
-}
+  .item {
+    img {
+      margin-bottom: 22px;
+      width: 60px;
+      height: 60px;
+    }
 
-.section4 .row .item .item-name {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 20px;
-  line-height: 1.15;
-  letter-spacing: 0.06rem;
-  color: #545454;
-}
-
-.section4 .row1 {
-  margin-bottom: 60px;
+    .itemName {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: 0.06rem;
+      color: #545454;
+    }
+  }
 }
 
 @media screen and (max-width: 1280px) {
-  .section4 .row .item {
-    width: 160px;
-  }
-
   .section4 .row {
     gap: 60px;
+
+    .item {
+      max-width: 160px;
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
   .section4 {
     padding: 40px 10px;
-  }
 
-  .section4 .row .item {
-    width: 120px;
-  }
+    h3 {
+      font-size: 25px;
+    }
 
-  .section4 .row .item .item-name {
-    font-size: 15px;
-  }
+    .row {
+      .item {
+        max-width: 120px;
 
-  .section4 h3 {
-    font-size: 25px;
+        .itemName {
+          font-size: 15px;
+        }
+      }
+    }
   }
 }
