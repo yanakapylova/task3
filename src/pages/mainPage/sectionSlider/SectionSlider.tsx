@@ -22,17 +22,19 @@ export const SectionSlider = function () {
     setRowsNumber(() => 1);
   }, []);
 
-  const buttonLeft: any = useRef<HTMLButtonElement>();
-  const buttonRight: any = useRef<HTMLButtonElement>();
+
+  const [buttonsDisabled, setButtonsDisabled] = useState({
+    buttonLeft: false,
+    buttonRight: false,
+  });
 
   function navigationControl() {
     if (startSliderIndex + itemsInRow > cards.length - 1) {
-      buttonRight.current.disabled = true;
+      setButtonsDisabled({ ...buttonsDisabled, buttonRight: true });
     } else if (startSliderIndex == 0) {
-      buttonLeft.current.disabled = true;
+      setButtonsDisabled({ ...buttonsDisabled, buttonLeft: true });
     } else {
-      buttonLeft.current.disabled = false;
-      buttonRight.current.disabled = false;
+      setButtonsDisabled({ buttonLeft: false, buttonRight: false });
     }
   }
 
@@ -49,9 +51,9 @@ export const SectionSlider = function () {
       </h3>
       <div className="sliderAndNavigation">
         <SliderCircleButton
-          ref={buttonLeft}
           id="arrow-left"
           onClick={() => handleSliderClick(-1)}
+          disabled={buttonsDisabled.buttonLeft}
         >
           ←
         </SliderCircleButton>
@@ -64,9 +66,9 @@ export const SectionSlider = function () {
         />
 
         <SliderCircleButton
-          ref={buttonRight}
           id="arrow-right"
           onClick={() => handleSliderClick(1)}
+          disabled={buttonsDisabled.buttonRight}
         >
           →
         </SliderCircleButton>
