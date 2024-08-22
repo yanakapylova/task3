@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "./themeContext";
+
 
 export const Header = function () {
   const { isDark, setIsDark } = useContext(ThemeContext);

@@ -6,6 +6,7 @@ import "./pages/mainPage/sectionSlider/style.css";
 import "./pages/mainPage/sectionHelp/style.css";
 import "./pages/mainPage/sectionDonation/style.css";
 import "./pages/ourPets/style.css";
+import "./pages/users/style.css";
 import "./components/portal/header.css";
 import "./components/portal/burger.css";
 import "./components/portal/footer.css";
@@ -16,9 +17,11 @@ import { MainPage } from "./pages/mainPage/MainPage";
 import { OurPets } from "./pages/ourPets/OurPets";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeContext } from "./components/portal/themeContext";
+import { Users } from "./pages/users/Users";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
+
   return (
     <ThemeContext.Provider value={{ isDark, setIsDark }}>
       <div className="App">
@@ -27,6 +30,7 @@ function App() {
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="ourpets" element={<OurPets />} />
+              <Route path="users" element={<Users />} />
             </Routes>
           </Portal>
         </BrowserRouter>
