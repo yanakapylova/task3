@@ -1,0 +1,116 @@
+.burgerMenu {
+  display: none;
+  z-index: 1000;
+
+  .burgerCheckbox {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked {
+      + .burger::before {
+        top: 5px;
+        left: -12px;
+        transform: rotate(-90deg);
+        transition: 0.3s;
+      }
+
+      + .burger::after {
+        bottom: 15px;
+        left: 12px;
+        transform: rotate(-90deg);
+        transition: 0.3s;
+      }
+
+      ~ .burgerMenuList {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .burger {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    border: none;
+    background: transparent;
+    width: 30px;
+    height: 22px;
+    top: 35px;
+    right: 50px;
+    z-index: 1001;
+
+    &::before,
+    &::after {
+      content: "";
+      left: 0;
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 10px;
+      background: #f1cdb3;
+    }
+
+    &::before {
+      top: -5px;
+      box-shadow: 0 12px 0 #f1cdb3;
+      transition: 0.3s;
+    }
+
+    &::after {
+      bottom: 0;
+      transition: 0.3s;
+    }
+  }
+
+  .burgerMenuList {
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 42px 0;
+    margin: 0;
+    padding-top: 160px;
+    background: #292929;
+    transform: translateX(100%);
+    transition: 0.3s;
+    min-width: 320px;
+    height: 100vh;
+
+    .burgerMenuItem {
+      text-align: center;
+
+      a {
+        display: inline;
+        padding: 8px;
+        color: black;
+        font-size: 18px;
+        text-decoration: none;
+        position: relative;
+        width: auto;
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cdcdcd;
+        text-align: center;
+      }
+
+      &.active a {
+        color: #fafafa;
+        border-bottom: 3px #f1cdb3 solid;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .burgerMenu {
+    display: block;
+    margin-top: 160px;
+  }
+}

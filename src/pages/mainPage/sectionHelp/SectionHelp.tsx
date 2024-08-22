@@ -12,7 +12,7 @@ export const SectionHelp = function () {
   };
 
   return (
-    <section className="section4">
+    <section className="section4" id="help">
       <h3>
         How you can help
         <br />
@@ -20,9 +20,9 @@ export const SectionHelp = function () {
       </h3>
       <div className="row">
         {Object.keys(row).map((name) => (
-          <div className="item">
+          <div className="item" key={row[name]}>
             <img src={row[name]} alt={name} />
-            <div className="item-name">{name}</div>
+            <div className="itemName">{name}</div>
           </div>
         ))}
       </div>

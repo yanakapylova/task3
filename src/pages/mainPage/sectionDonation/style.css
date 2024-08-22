@@ -5,60 +5,60 @@
   gap: 120px;
   justify-content: center;
   background-color: #f6f6f6;
-}
 
-.section5 p {
-  margin: 0;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 380px;
 
-.section5 .content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 380px;
-}
+    p {
+      margin: 0;
+    }
 
-.section5 .content .credit-card {
-  padding: 10px 15px;
-  background-color: #f1cdb3;
-  color: #545454;
-  border-radius: 10px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 20px;
-  line-height: 1.15;
-  letter-spacing: 0.06rem;
-  align-self: flex-start;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+    .creditCard {
+      padding: 10px 15px;
+      background-color: #f1cdb3;
+      color: #545454;
+      border-radius: 10px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: 0.06rem;
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-.section5 .content-subtitle {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 15px;
-  line-height: 1.1;
-  letter-spacing: 0.06rem;
-}
+    .contentSubtitle {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 15px;
+      line-height: 1.1;
+      letter-spacing: 0.06rem;
+    }
 
-.section5 .legal-information {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  color: #b2b2b2;
+    .legalInformation {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-style: italic;
+      color: #b2b2b2;
+    }
+  }
 }
 
 @media screen and (max-width: 1280px) {
   .section5 {
     flex-direction: column-reverse;
     align-items: center;
-  }
 
-  .section5 > img {
-    width: 70%;
-  }
+    > img {
+      width: 70%;
+    }
 
-  .section5 .content .credit-card {
-    gap: 20px;
+    .content .creditCard {
+      gap: 20px;
+    }
   }
 }
 
@@ -66,32 +66,32 @@
   .section5 {
     padding: 40px 20px;
     text-align: center;
-  }
 
-  .section5 .content .credit-card {
-    margin: 0 auto;
-  }
+    .content {
+      width: auto;
 
-  .section5 .content .credit-card span {
-    font-size: 15px;
-  }
+      h3 {
+        font-size: 25px;
+      }
 
-  .section5 .content .content-subtitle {
-    font-size: 15px;
-    letter-spacing: normal;
-  }
+      .creditCard {
+        margin: 0 auto;
+      }
 
-  .section5 .content {
-    width: auto;
-  }
+      .creditCard span {
+        font-size: 15px;
+      }
 
-  .section5 .content h3 {
-    font-size: 25px;
-  }
+      .contentSubtitle {
+        font-size: 15px;
+        letter-spacing: normal;
+      }
 
-  .section5 .legal-information {
-    font-size: 12px;
-    line-height: 1.18;
-    text-align: justify;
+      .legalInformation {
+        font-size: 12px;
+        line-height: 1.18;
+        text-align: justify;
+      }
+    }
   }
 }
