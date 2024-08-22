@@ -1,9 +1,45 @@
 .section3 {
-    padding: 80px 0;
-    background-color: #F6F6F6;
-    text-align: center;
+  padding: 80px 20px;
+  background-color: #f6f6f6;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  h3 {
+    margin-top: 50px;
+  }
+
+  > button {
+    margin: 0 auto;
+  }
+
+  .sliderAndNavigation {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+    align-items: center;
+  }
 }
 
-.section3 h3{
-    margin-top: 50px;
+@media screen and (max-width: 768px) {
+  .section3 .sliderAndNavigation {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+    .container {
+      order: 1;
+      width: 100%;
+    }
+
+    #arrow-left {
+      order: 2;
+      margin-right: 60px;
+    }
+
+    #arrow-right {
+      order: 3;
+    }
+  }
 }

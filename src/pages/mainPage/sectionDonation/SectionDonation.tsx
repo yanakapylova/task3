@@ -1,19 +1,19 @@
 export const SectionDonation = function () {
   return (
     <section className="section5">
-      <img src="/img/donation/donation-dog.png" alt="" />
+      <img src="/img/donation/donation-dog.png" alt="dog" />
       <div className="content">
         <h3>
           You can also
           <br />
           make a donation
         </h3>
-        <p className="content-subtitle">Name of the bank / Type of bank account</p>
-        <div className="credit-card">
-          <img src="/img/donation/credit-card.svg" alt="" />
+        <p className="contentSubtitle">Name of the bank / Type of bank account</p>
+        <div className="creditCard">
+          <img src="/img/donation/credit-card.svg" alt="credit card icon" />
           <span>8380 2880 8028 8791 7435</span>
         </div>
-        <p className="legal-information">
+        <p className="legalInformation">
           Legal information and lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac
           diam. Praesent ultrices maximus tortor et vulputate. Interdum et

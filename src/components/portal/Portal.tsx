@@ -7,9 +7,10 @@ type PortalProps = {
 };
 
 export const Portal = ({ children }: PortalProps) => {
+
   return (
     <>
-      <Header />
+      <Header/>
       {children}
       <Footer />
     </>
