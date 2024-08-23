@@ -1,23 +1,23 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { User } from "./User";
+import { showPopUp } from "../components/popup/PopUpUsersAction";
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   const response = await fetch("http://127.0.0.1:3008/postgress");
   const data = await response.json();
-  return data;
+
+  if (!response.ok) {
+    console.log("Пользователя с таким id не существует");
+  }
+
+  return [data, response.status];
 });
 
-export const removeUserbyId = createAsyncThunk(
-  "user/removeUserbyId",
+export const fetchUserbyId = createAsyncThunk(
+  "user/fetchUserbyId",
   async (id: number) => {
-    const response = await fetch(`http://127.0.0.1:3008/postgress/${id}`, {
-      method: "DELETE",
-    });
-    console.log(response)
-    if (!response.ok) {
-      console.log("Пользователя с таким id не существует")
-    }
-    return id;
+    const response = await fetch(`http://127.0.0.1:3008/postgress/${id}`);
+    const data = await response.json();
+    return [data, response.status];
   }
 );
 
@@ -34,7 +34,31 @@ export const createUser = createAsyncThunk(
         isActive: true,
       }),
     });
-    return { name: name, isActive: true, id: 0 };
+
+    if (!response.ok) {
+      console.log("Пользователя с таким id не существует");
+      return [null, response.status];
+    } else {
+      const data = await response.json();
+      return [
+        { name: data.name, isActive: data.isActive, id: data.id },
+        response.status,
+      ];
+    }
+  }
+);
+
+export const removeUserbyId = createAsyncThunk(
+  "user/removeUserbyId",
+  async (id: number) => {
+    const response = await fetch(`http://127.0.0.1:3008/postgress/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      console.log("Пользователя с таким id не существует");
+      return [null, +response.status];
+    }
+    return [id, +response.status];
   }
 );
 
@@ -52,42 +76,93 @@ export const updateUserNameById = createAsyncThunk(
         name: newName,
       }),
     });
-    return data;
+
+    if (!response.ok) {
+      return [null, response.status];
+    } else {
+      return [data, response.status];
+    }
   }
 );
 
+export interface User {
+  id: number;
+  name: string;
+  isActive: boolean;
+}
+
 export interface UsersState {
   entities: User[];
+  activeUser: User;
+  actionStatus: any;
 }
 
 const initialState: UsersState = {
   entities: [{ id: 0, name: "Loading name...", isActive: false }],
+  activeUser: { id: 0, name: "", isActive: false },
+  actionStatus: 0,
 };
+
+function showResponsePopUp(state: any, responseStatus: number | null) {
+  state.actionStatus = responseStatus;
+  showPopUp();
+}
 
 export const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      state.entities = action.payload;
+      const [data, responseStatus] = action.payload;
+      state.entities = data;
     });
 
     builder.addCase(removeUserbyId.fulfilled, (state, action) => {
-      state.entities = state.entities.filter(
-        (entity) => entity.id != action.payload
-      );
+      const [id, responseStatus] = action.payload;
+      if (id) {
+        state.entities = state.entities.filter((entity) => entity.id != id);
+      }
+      showResponsePopUp(state, responseStatus);
     });
 
     builder.addCase(createUser.fulfilled, (state, action) => {
-      state.entities.push(action.payload);
+      const data: any = action.payload[0];
+      const responseStatus: any = action.payload[1];
+
+      if (data) {
+        state.entities.push(data);
+      }
+      showResponsePopUp(state, responseStatus);
     });
 
     builder.addCase(updateUserNameById.fulfilled, (state, action) => {
-      const [id, newName] = action.payload;
-      const item: any = state.entities.findIndex((entity) => entity.id === id);
-      state.entities[item]["name"] = newName;
+      const data: any = action.payload[0];
+      const responseStatus: any = action.payload[1];
+
+      if (data) {
+        const [id, newName] = data;
+        const item: any = state.entities.findIndex(
+          (entity) => entity.id === id
+        );
+        if (item !== -1) {
+          state.entities[item]["name"] = newName;
+        }
+      }
+      showResponsePopUp(state, responseStatus);
+    });
+
+    builder.addCase(fetchUserbyId.fulfilled, (state, action) => {
+      const data: User = action.payload[0];
+      const responseStatus: any = action.payload[1];
+
+      if (data) {
+        state.activeUser.id = data.id;
+        state.activeUser.name = data.name;
+        state.activeUser.isActive = data.isActive;
+      }
+
+      showResponsePopUp(state, responseStatus);
     });
   },
 });
